@@ -225,32 +225,104 @@ section p.lede {
 }
 
 .card {
+  position: relative;
   background: var(--card-fill);
   border: 1px solid var(--card-stroke);
   border-radius: var(--radius-card);
   padding: 22px;
-  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  overflow: hidden;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease;
 }
+
+/* Soft glow overlay that fades in on hover, tinted by each tile's accent */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 0% 0%, var(--tile-glow, transparent), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card > * { position: relative; z-index: 1; }
 
 .card:hover {
   background: var(--card-fill-strong);
-  border-color: rgba(255, 255, 255, 0.14);
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-4px);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.28),
+    0 0 0 1px var(--tile-ring, rgba(255, 255, 255, 0.08));
 }
 
+.card:hover::before { opacity: 0.55; }
+
 .card .tile {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
   display: grid;
   place-items: center;
   margin-bottom: 14px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.10);
   font-size: 20px;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
 }
 
-.card .tile.brand { background: var(--brand-gradient-diag); border-color: rgba(255,255,255,0.22); }
+.card:hover .tile {
+  transform: translateY(-1px) scale(1.06) rotate(-3deg);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 10px 24px var(--tile-glow, rgba(199, 92, 235, 0.4)),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* ─── tile color variants ─── */
+
+.tile.c-cyan    { background: linear-gradient(135deg, #22D3EE, #3B82F6); }
+.tile.c-green   { background: linear-gradient(135deg, #34D399, #10B981); }
+.tile.c-red     { background: linear-gradient(135deg, #FB7185, #EF4444); }
+.tile.c-amber   { background: linear-gradient(135deg, #FBBF24, #F97316); }
+.tile.c-rainbow { background: linear-gradient(135deg, #F472B6 0%, #C084FC 35%, #60A5FA 70%, #34D399 100%); }
+.tile.c-indigo  { background: linear-gradient(135deg, #818CF8, #6366F1); }
+.tile.c-violet  { background: linear-gradient(135deg, #C084FC, #8B5CF6); }
+.tile.c-pink    { background: linear-gradient(135deg, #F472B6, #EC4899); }
+.tile.c-teal    { background: linear-gradient(135deg, #2DD4BF, #0EA5E9); }
+
+/* Per-card glow color picked up by ::before + hover shadow */
+.card:has(.tile.c-cyan)    { --tile-glow: rgba(59, 130, 246, 0.45); --tile-ring: rgba(59, 130, 246, 0.28); }
+.card:has(.tile.c-green)   { --tile-glow: rgba(16, 185, 129, 0.45); --tile-ring: rgba(16, 185, 129, 0.26); }
+.card:has(.tile.c-red)     { --tile-glow: rgba(239, 68, 68, 0.45);  --tile-ring: rgba(239, 68, 68, 0.26); }
+.card:has(.tile.c-amber)   { --tile-glow: rgba(249, 115, 22, 0.45); --tile-ring: rgba(249, 115, 22, 0.26); }
+.card:has(.tile.c-rainbow) { --tile-glow: rgba(192, 132, 252, 0.45); --tile-ring: rgba(192, 132, 252, 0.26); }
+.card:has(.tile.c-indigo)  { --tile-glow: rgba(99, 102, 241, 0.45); --tile-ring: rgba(99, 102, 241, 0.26); }
+.card:has(.tile.c-violet)  { --tile-glow: rgba(139, 92, 246, 0.45); --tile-ring: rgba(139, 92, 246, 0.26); }
+.card:has(.tile.c-pink)    { --tile-glow: rgba(236, 72, 153, 0.45); --tile-ring: rgba(236, 72, 153, 0.26); }
+.card:has(.tile.c-teal)    { --tile-glow: rgba(14, 165, 233, 0.45); --tile-ring: rgba(14, 165, 233, 0.26); }
+.card:has(.tile.brand)     { --tile-glow: rgba(199, 92, 235, 0.5);  --tile-ring: rgba(199, 92, 235, 0.32); }
+
+.card .tile.brand {
+  background: var(--brand-gradient-diag);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card .tile, .card::before { transition: none !important; }
+  .card:hover { transform: none; }
+  .card:hover .tile { transform: none; }
+}
 
 .card h3 {
   font-size: 16px;
