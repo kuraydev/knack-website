@@ -500,6 +500,89 @@ footer a {
 }
 footer a:hover { color: var(--text-primary); }
 
+/* ─── screenshots ─── */
+
+/*
+ * Source PNGs are 1779×1162 (roughly @2x for our layout). We render them
+ * responsively and let the browser's default high-quality downscale do
+ * the work — explicitly avoiding image-rendering overrides, which make
+ * photographic content look crunchy on retina.
+ */
+.shot {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(199, 92, 235, 0.08), transparent 60%),
+    var(--card-fill-strong);
+  border: 1px solid var(--card-stroke);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.4s ease;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Avoid any transform that would trigger low-quality rasterization. */
+  image-rendering: auto;
+}
+
+.shot figcaption {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(14, 18, 36, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.shot-hero {
+  margin-bottom: 20px;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.55),
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 80px rgba(199, 92, 235, 0.18);
+}
+
+.shot-hero:hover { transform: translateY(-3px); }
+
+.shot-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.shot-grid .shot:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 28px 68px rgba(0, 0, 0, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(199, 92, 235, 0.25);
+}
+
+@media (max-width: 720px) {
+  .shot-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot, .shot-hero, .shot-grid .shot { transition: none; }
+  .shot-hero:hover, .shot-grid .shot:hover { transform: none; }
+}
+
 /* ─── prose (privacy page) ─── */
 
 .prose {
