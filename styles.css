@@ -226,7 +226,9 @@ section p.lede {
 
 .card {
   position: relative;
-  background: var(--card-fill);
+  background:
+    linear-gradient(180deg, var(--tile-tint, transparent), transparent 60%),
+    var(--card-fill);
   border: 1px solid var(--card-stroke);
   border-radius: var(--radius-card);
   padding: 22px;
@@ -255,7 +257,6 @@ section p.lede {
 .card > * { position: relative; z-index: 1; }
 
 .card:hover {
-  background: var(--card-fill-strong);
   border-color: rgba(255, 255, 255, 0.18);
   transform: translateY(-4px);
   box-shadow:
@@ -266,27 +267,36 @@ section p.lede {
 .card:hover::before { opacity: 0.55; }
 
 .card .tile {
-  width: 44px;
-  height: 44px;
-  border-radius: 11px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
   display: grid;
   place-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.10);
-  font-size: 20px;
+  color: #fff;
   transition:
     transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 0.35s ease,
     border-color 0.25s ease;
+  box-shadow:
+    0 6px 14px var(--tile-glow, rgba(199, 92, 235, 0.18)),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.card .tile svg {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 
 .card:hover .tile {
   transform: translateY(-1px) scale(1.06) rotate(-3deg);
-  border-color: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.28);
   box-shadow:
-    0 10px 24px var(--tile-glow, rgba(199, 92, 235, 0.4)),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    0 12px 26px var(--tile-glow, rgba(199, 92, 235, 0.45)),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 /* ─── tile color variants ─── */
@@ -300,23 +310,33 @@ section p.lede {
 .tile.c-violet  { background: linear-gradient(135deg, #C084FC, #8B5CF6); }
 .tile.c-pink    { background: linear-gradient(135deg, #F472B6, #EC4899); }
 .tile.c-teal    { background: linear-gradient(135deg, #2DD4BF, #0EA5E9); }
-
-/* Per-card glow color picked up by ::before + hover shadow */
-.card:has(.tile.c-cyan)    { --tile-glow: rgba(59, 130, 246, 0.45); --tile-ring: rgba(59, 130, 246, 0.28); }
-.card:has(.tile.c-green)   { --tile-glow: rgba(16, 185, 129, 0.45); --tile-ring: rgba(16, 185, 129, 0.26); }
-.card:has(.tile.c-red)     { --tile-glow: rgba(239, 68, 68, 0.45);  --tile-ring: rgba(239, 68, 68, 0.26); }
-.card:has(.tile.c-amber)   { --tile-glow: rgba(249, 115, 22, 0.45); --tile-ring: rgba(249, 115, 22, 0.26); }
-.card:has(.tile.c-rainbow) { --tile-glow: rgba(192, 132, 252, 0.45); --tile-ring: rgba(192, 132, 252, 0.26); }
-.card:has(.tile.c-indigo)  { --tile-glow: rgba(99, 102, 241, 0.45); --tile-ring: rgba(99, 102, 241, 0.26); }
-.card:has(.tile.c-violet)  { --tile-glow: rgba(139, 92, 246, 0.45); --tile-ring: rgba(139, 92, 246, 0.26); }
-.card:has(.tile.c-pink)    { --tile-glow: rgba(236, 72, 153, 0.45); --tile-ring: rgba(236, 72, 153, 0.26); }
-.card:has(.tile.c-teal)    { --tile-glow: rgba(14, 165, 233, 0.45); --tile-ring: rgba(14, 165, 233, 0.26); }
-.card:has(.tile.brand)     { --tile-glow: rgba(199, 92, 235, 0.5);  --tile-ring: rgba(199, 92, 235, 0.32); }
+.tile.c-blue    { background: linear-gradient(135deg, #60A5FA, #2563EB); }
+.tile.c-orange  { background: linear-gradient(135deg, #FDBA74, #EA580C); }
+.tile.c-mint    { background: linear-gradient(135deg, #6EE7B7, #14B8A6); }
+.tile.c-magenta { background: linear-gradient(135deg, #F0ABFC, #D946EF); }
+.tile.c-coral   { background: linear-gradient(135deg, #FCA5A5, #F43F5E); }
 
 .card .tile.brand {
   background: var(--brand-gradient-diag);
   border-color: rgba(255, 255, 255, 0.22);
 }
+
+/* Per-card variables: subtle default top tint + glow color + hover ring */
+.card:has(.tile.c-cyan)    { --tile-tint: rgba(59, 130, 246, 0.10);  --tile-glow: rgba(59, 130, 246, 0.45);  --tile-ring: rgba(59, 130, 246, 0.28); }
+.card:has(.tile.c-green)   { --tile-tint: rgba(16, 185, 129, 0.10);  --tile-glow: rgba(16, 185, 129, 0.45);  --tile-ring: rgba(16, 185, 129, 0.26); }
+.card:has(.tile.c-red)     { --tile-tint: rgba(239, 68, 68, 0.10);   --tile-glow: rgba(239, 68, 68, 0.45);   --tile-ring: rgba(239, 68, 68, 0.26); }
+.card:has(.tile.c-amber)   { --tile-tint: rgba(249, 115, 22, 0.10);  --tile-glow: rgba(249, 115, 22, 0.45);  --tile-ring: rgba(249, 115, 22, 0.26); }
+.card:has(.tile.c-rainbow) { --tile-tint: rgba(192, 132, 252, 0.10); --tile-glow: rgba(192, 132, 252, 0.45); --tile-ring: rgba(192, 132, 252, 0.26); }
+.card:has(.tile.c-indigo)  { --tile-tint: rgba(99, 102, 241, 0.10);  --tile-glow: rgba(99, 102, 241, 0.45);  --tile-ring: rgba(99, 102, 241, 0.26); }
+.card:has(.tile.c-violet)  { --tile-tint: rgba(139, 92, 246, 0.10);  --tile-glow: rgba(139, 92, 246, 0.45);  --tile-ring: rgba(139, 92, 246, 0.26); }
+.card:has(.tile.c-pink)    { --tile-tint: rgba(236, 72, 153, 0.10);  --tile-glow: rgba(236, 72, 153, 0.45);  --tile-ring: rgba(236, 72, 153, 0.26); }
+.card:has(.tile.c-teal)    { --tile-tint: rgba(14, 165, 233, 0.10);  --tile-glow: rgba(14, 165, 233, 0.45);  --tile-ring: rgba(14, 165, 233, 0.26); }
+.card:has(.tile.c-blue)    { --tile-tint: rgba(37, 99, 235, 0.10);   --tile-glow: rgba(37, 99, 235, 0.45);   --tile-ring: rgba(37, 99, 235, 0.26); }
+.card:has(.tile.c-orange)  { --tile-tint: rgba(234, 88, 12, 0.10);   --tile-glow: rgba(234, 88, 12, 0.45);   --tile-ring: rgba(234, 88, 12, 0.26); }
+.card:has(.tile.c-mint)    { --tile-tint: rgba(20, 184, 166, 0.10);  --tile-glow: rgba(20, 184, 166, 0.45);  --tile-ring: rgba(20, 184, 166, 0.26); }
+.card:has(.tile.c-magenta) { --tile-tint: rgba(217, 70, 239, 0.10);  --tile-glow: rgba(217, 70, 239, 0.45);  --tile-ring: rgba(217, 70, 239, 0.26); }
+.card:has(.tile.c-coral)   { --tile-tint: rgba(244, 63, 94, 0.10);   --tile-glow: rgba(244, 63, 94, 0.45);   --tile-ring: rgba(244, 63, 94, 0.26); }
+.card:has(.tile.brand)     { --tile-tint: rgba(199, 92, 235, 0.12);  --tile-glow: rgba(199, 92, 235, 0.5);   --tile-ring: rgba(199, 92, 235, 0.32); }
 
 @media (prefers-reduced-motion: reduce) {
   .card, .card .tile, .card::before { transition: none !important; }
