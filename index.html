@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
   <meta property="og:title" content="Knack — The complete Mac toolkit" />
   <meta property="og:description" content="14 native Mac tools. On-device. No uploads. No subscription. One-time $4.99." />
-  <meta property="og:image" content="icon.png" />
+  <meta property="og:image" content="screenshots/home-page.png" />
   <meta name="theme-color" content="#0E1224" />
 </head>
 <body>
@@ -23,7 +23,8 @@
         <span>Knack</span>
       </div>
       <div class="links">
-        <a href="#features">Features</a>
+        <a href="#showcase">Tour</a>
+        <a href="#tools">Tools</a>
         <a href="#pricing">Pricing</a>
         <a href="privacy.html">Privacy</a>
       </div>
@@ -39,193 +40,183 @@
       </p>
       <div class="cta-row">
         <a class="btn primary" href="#" aria-disabled="true">Download on the Mac App Store</a>
-        <a class="btn outline" href="#features">See what's inside</a>
+        <a class="btn outline" href="#showcase">Take the tour</a>
       </div>
     </header>
+  </div>
+
+  <section class="hero-shot-wrap">
+    <div class="container">
+      <figure class="window shot-hero">
+        <img src="screenshots/home-page.png"
+             alt="Knack home dashboard showing all 14 native Mac tools"
+             width="1779" height="1162"
+             loading="eager" decoding="async" fetchpriority="high" />
+      </figure>
+      <div class="hero-stats">
+        <div class="stat"><strong>14</strong><span>native tools</span></div>
+        <div class="stat"><strong>100%</strong><span>on-device</span></div>
+        <div class="stat"><strong>0</strong><span>uploads, ever</span></div>
+        <div class="stat"><strong>$4.99</strong><span>one-time, for Pro</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="showcase" class="showcase-intro">
+      <div class="section-label">See it in action</div>
+      <h2>Every pixel, rendered on your Mac.</h2>
+      <p class="lede">Native SwiftUI. Retina-sharp. Here's a closer look at the tools people use most.</p>
+    </section>
+
+    <section class="showcase">
+      <div class="showcase-row">
+        <div class="showcase-copy">
+          <div class="chip chip-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.6"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg>
+            Image Converter
+          </div>
+          <h3>Batch convert anything<br />to anything.</h3>
+          <p>Drop in hundreds of files and convert between PNG, JPEG, WebP, HEIC, TIFF, GIF, and BMP. Quality, resizing, and output folder — dialed in once, applied everywhere.</p>
+          <ul class="pills">
+            <li>PNG</li><li>JPEG</li><li>WebP</li><li>HEIC</li><li>TIFF</li><li>GIF</li><li>BMP</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <img src="screenshots/image-converter.png" alt="Image Converter batch UI" width="1779" height="1162" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+
+      <div class="showcase-row reverse">
+        <div class="showcase-copy">
+          <div class="chip chip-brand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M5 21c.7-3.5 3.6-6 7-6s6.3 2.5 7 6"/></svg>
+            AI Background Remover <span class="pro-pill">Pro</span>
+          </div>
+          <h3>Truly on-device AI,<br />truly instant.</h3>
+          <p>Powered by Apple's Vision framework — the same model built into macOS. Cut out subjects in milliseconds, no cloud round-trip, no API key, no queue.</p>
+          <ul class="pills">
+            <li>Apple Vision</li><li>No network</li><li>Transparent PNG</li><li>Batch mode</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <img src="screenshots/ai-background-remover.png" alt="AI Background Remover with on-device subject detection" width="1779" height="1162" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+
+      <div class="showcase-row">
+        <div class="showcase-copy">
+          <div class="chip chip-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 9h10M7 13h10M7 17h6"/></svg>
+            Text Extractor <span class="pro-pill">Pro</span>
+          </div>
+          <h3>OCR that stays<br />on your desk.</h3>
+          <p>Pull text from screenshots, photos, and scanned PDFs with Apple Vision's language-aware recognition — then copy, save, or search. Your documents never touch the internet.</p>
+          <ul class="pills">
+            <li>Multilingual</li><li>PDF support</li><li>Copy &amp; save</li><li>Batch</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <img src="screenshots/text-extractor.png" alt="Text Extractor recognizing text from an image" width="1779" height="1162" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+
+      <div class="showcase-row reverse">
+        <div class="showcase-copy">
+          <div class="chip chip-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><rect x="8" y="8" width="8" height="8" rx="2"/></svg>
+            App Icon Generator
+          </div>
+          <h3>Every icon size,<br />from one source.</h3>
+          <p>Drop in a 1024×1024 master. Get the full icon set for macOS, iOS, Android, and the web — named correctly, bundled neatly, ready to ship.</p>
+          <ul class="pills">
+            <li>macOS</li><li>iOS</li><li>Android</li><li>Web favicons</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <img src="screenshots/app-icon-gen.png" alt="App Icon Generator exporting all platform sizes" width="1779" height="1162" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
 
     <hr class="sep" />
 
-    <section id="features">
-      <div class="section-label">Free forever</div>
-      <h2>Eight tools, zero cost.</h2>
-      <p class="lede">Work with images, PDFs, video, and audio using Apple's own frameworks — no limits, no watermarks, no sign-in.</p>
+    <section id="tools">
+      <div class="section-label">All 14 tools</div>
+      <h2>One window, everything.</h2>
+      <p class="lede">Eight free tools for everyone. Six Pro tools powered by Apple's Vision and Core Image — all on-device.</p>
 
       <div class="grid">
         <div class="card">
-          <div class="tile c-cyan">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.6"/><path d="M3 17l5-5 4 4 3-3 6 6"/>
-            </svg>
-          </div>
+          <div class="tile c-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.6"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg></div>
           <h3>Image Converter</h3>
           <p>PNG, JPEG, WebP, HEIC, TIFF, GIF, BMP. Batch-friendly.</p>
         </div>
         <div class="card">
-          <div class="tile c-green">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 4h10M7 20h10M9 8h6M9 16h6"/><path d="M12 11v2"/><path d="M8 12h8"/>
-            </svg>
-          </div>
+          <div class="tile c-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10M7 20h10M9 8h6M9 16h6"/><path d="M12 11v2"/><path d="M8 12h8"/></svg></div>
           <h3>Image Compressor</h3>
-          <p>Lossless and smart-lossy compression with oxipng and pngquant.</p>
+          <p>Lossless and smart-lossy via oxipng and pngquant.</p>
         </div>
         <div class="card">
-          <div class="tile c-red">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>
-            </svg>
-          </div>
+          <div class="tile c-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div>
           <h3>PDF Toolkit</h3>
-          <p>Merge, split, compress, rotate, extract text and images.</p>
+          <p>Merge, split, compress, rotate, extract.</p>
         </div>
         <div class="card">
-          <div class="tile c-rainbow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3a9 9 0 0 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4a1.95 1.95 0 0 1 1.4-3.3H17a4 4 0 0 0 4-4 8 8 0 0 0-9-7.3z"/><circle cx="7.5" cy="10.5" r="1.2" fill="currentColor"/><circle cx="11.5" cy="6.5" r="1.2" fill="currentColor"/><circle cx="16" cy="9" r="1.2" fill="currentColor"/>
-            </svg>
-          </div>
+          <div class="tile c-rainbow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4a1.95 1.95 0 0 1 1.4-3.3H17a4 4 0 0 0 4-4 8 8 0 0 0-9-7.3z"/><circle cx="7.5" cy="10.5" r="1.2" fill="currentColor"/><circle cx="11.5" cy="6.5" r="1.2" fill="currentColor"/><circle cx="16" cy="9" r="1.2" fill="currentColor"/></svg></div>
           <h3>Color Palette</h3>
-          <p>Extract dominant colors. Copy HEX, RGB, or HSL in a click.</p>
+          <p>Extract dominant colors. HEX, RGB, HSL.</p>
         </div>
         <div class="card">
-          <div class="tile c-indigo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3M21 14v3M14 17v4M17 17h4M17 21h4"/>
-            </svg>
-          </div>
+          <div class="tile c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3M21 14v3M14 17v4M17 17h4M17 21h4"/></svg></div>
           <h3>QR Generator</h3>
-          <p>URLs, Wi-Fi, contact cards. Customize and export any size.</p>
+          <p>URLs, Wi-Fi, contact cards. Any size.</p>
         </div>
         <div class="card">
-          <div class="tile c-violet">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h4M3 15h4M17 9h4M17 15h4M7 5v14M17 5v14"/><path d="M11 9.5v5l4-2.5z" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
+          <div class="tile c-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h4M3 15h4M17 9h4M17 15h4M7 5v14M17 5v14"/><path d="M11 9.5v5l4-2.5z" fill="currentColor" stroke="none"/></svg></div>
           <h3>Video Converter</h3>
-          <p>MP4, MOV, MKV, WebM, GIF. Hardware H.264/H.265.</p>
+          <p>MP4, MOV, MKV, WebM, GIF. H.264/H.265.</p>
         </div>
         <div class="card">
-          <div class="tile c-pink">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 12h2l2-7 4 14 3-10 2 6 2-3h3"/>
-            </svg>
-          </div>
+          <div class="tile c-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-7 4 14 3-10 2 6 2-3h3"/></svg></div>
           <h3>Audio Converter</h3>
-          <p>MP3, WAV, AAC, FLAC, OGG. Metadata preserved.</p>
+          <p>MP3, WAV, AAC, FLAC, OGG. Tags preserved.</p>
         </div>
         <div class="card">
-          <div class="tile c-teal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="4" y="4" width="16" height="16" rx="4"/><rect x="8" y="8" width="8" height="8" rx="2"/><path d="M2 9h2M2 15h2M20 9h2M20 15h2M9 2v2M15 2v2M9 20v2M15 20v2"/>
-            </svg>
-          </div>
+          <div class="tile c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><rect x="8" y="8" width="8" height="8" rx="2"/><path d="M2 9h2M2 15h2M20 9h2M20 15h2M9 2v2M15 2v2M9 20v2M15 20v2"/></svg></div>
           <h3>App Icon Generator</h3>
-          <p>Full icon sets for macOS, iOS, Android, and the web.</p>
+          <p>Full sets for macOS, iOS, Android, web.</p>
         </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-label">Knack Pro</div>
-      <h2>Six premium tools, all on-device.</h2>
-      <p class="lede">Run entirely on your Mac using Apple's built-in Vision and Core Image frameworks. Your files never leave your device.</p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="tile brand">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M5 21c.7-3.5 3.6-6 7-6s6.3 2.5 7 6"/><path d="M3 3l3.5 3.5M21 3l-3.5 3.5M3 21l3.5-3.5M21 21l-3.5-3.5" stroke-dasharray="2 2"/>
-            </svg>
-          </div>
+        <div class="card pro">
+          <div class="tile brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M5 21c.7-3.5 3.6-6 7-6s6.3 2.5 7 6"/></svg></div>
           <h3>AI Background Remover <span class="pro-pill">Pro</span></h3>
-          <p>Cut out subjects with Apple's on-device Vision model. Truly AI.</p>
+          <p>Apple Vision subject detection, on-device.</p>
         </div>
-        <div class="card">
-          <div class="tile c-blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 9V5a2 2 0 0 1 2-2h4M21 9V5a2 2 0 0 0-2-2h-4M3 15v4a2 2 0 0 0 2 2h4M21 15v4a2 2 0 0 1-2 2h-4"/><path d="M8 12h8M12 8v8M9 11l3-3 3 3M9 13l3 3 3-3"/>
-            </svg>
-          </div>
+        <div class="card pro">
+          <div class="tile c-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9V5a2 2 0 0 1 2-2h4M21 9V5a2 2 0 0 0-2-2h-4M3 15v4a2 2 0 0 0 2 2h4M21 15v4a2 2 0 0 1-2 2h-4"/><path d="M8 12h8M12 8v8M9 11l3-3 3 3M9 13l3 3 3-3"/></svg></div>
           <h3>Image Upscaler <span class="pro-pill">Pro</span></h3>
-          <p>2× / 4× upscaling with sharpening. Instant, no network.</p>
+          <p>2× / 4× upscaling with sharpening.</p>
         </div>
-        <div class="card">
-          <div class="tile c-orange">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3l1.8 4.5L18 9l-4.2 1.5L12 15l-1.8-4.5L6 9l4.2-1.5z"/><path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9z"/><path d="M5 16l.9 2.1L8 19l-2.1.9L5 22l-.9-2.1L2 19l2.1-.9z"/>
-            </svg>
-          </div>
+        <div class="card pro">
+          <div class="tile c-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.5L18 9l-4.2 1.5L12 15l-1.8-4.5L6 9l4.2-1.5z"/><path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9z"/></svg></div>
           <h3>Photo Enhance <span class="pro-pill">Pro</span></h3>
-          <p>Denoise and sharpen photos using Core Image in one pass.</p>
+          <p>Denoise &amp; sharpen via Core Image.</p>
         </div>
-        <div class="card">
-          <div class="tile c-mint">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 3v15a2 2 0 0 0 2 2h13"/><path d="M3 6h15a2 2 0 0 1 2 2v13"/>
-            </svg>
-          </div>
+        <div class="card pro">
+          <div class="tile c-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v15a2 2 0 0 0 2 2h13"/><path d="M3 6h15a2 2 0 0 1 2 2v13"/></svg></div>
           <h3>Smart Crop <span class="pro-pill">Pro</span></h3>
-          <p>Auto-crop to any social ratio using Vision saliency.</p>
+          <p>Auto-crop to any ratio via Vision saliency.</p>
         </div>
-        <div class="card">
-          <div class="tile c-magenta">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M9 15c1.5 1 4.5 1 6 0"/>
-            </svg>
-          </div>
+        <div class="card pro">
+          <div class="tile c-magenta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M9 15c1.5 1 4.5 1 6 0"/></svg></div>
           <h3>Face Restoration <span class="pro-pill">Pro</span></h3>
-          <p>Detect faces and refine each one with targeted filters.</p>
+          <p>Detect faces and refine each one.</p>
         </div>
-        <div class="card">
-          <div class="tile c-amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 9h10M7 13h10M7 17h6"/>
-            </svg>
-          </div>
+        <div class="card pro">
+          <div class="tile c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 9h10M7 13h10M7 17h6"/></svg></div>
           <h3>Text Extractor <span class="pro-pill">Pro</span></h3>
-          <p>Pull text from images and scanned PDFs with Apple Vision — fully on-device.</p>
+          <p>OCR via Apple Vision. Fully on-device.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="screenshots">
-      <div class="section-label">See it in action</div>
-      <h2>Every pixel, rendered on your Mac.</h2>
-      <p class="lede">Native SwiftUI, retina-sharp. Here's what Knack looks like in day-to-day use.</p>
-
-      <figure class="shot shot-hero">
-        <img src="screenshots/home-page.png"
-             alt="Knack home dashboard with every tool"
-             width="1779" height="1162"
-             loading="eager" decoding="async" fetchpriority="high" />
-      </figure>
-
-      <div class="shot-grid">
-        <figure class="shot">
-          <img src="screenshots/image-converter.png"
-               alt="Image Converter batch UI"
-               width="1779" height="1162" loading="lazy" decoding="async" />
-          <figcaption>Image Converter</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="screenshots/text-extractor.png"
-               alt="Text Extractor OCR results"
-               width="1779" height="1162" loading="lazy" decoding="async" />
-          <figcaption>Text Extractor</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="screenshots/ai-background-remover.png"
-               alt="AI Background Remover before/after"
-               width="1779" height="1162" loading="lazy" decoding="async" />
-          <figcaption>AI Background Remover</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="screenshots/app-icon-gen.png"
-               alt="App Icon Generator export sizes"
-               width="1779" height="1162" loading="lazy" decoding="async" />
-          <figcaption>App Icon Generator</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -261,7 +252,7 @@
         </div>
       </div>
 
-      <p style="text-align:center;color:var(--text-tertiary);font-size:13px;margin-top:24px;max-width:560px;margin-left:auto;margin-right:auto;">
+      <p class="pricing-footnote">
         New Pro tools and upgrades ship regularly. Buy once — every future addition is
         included at no extra cost.
       </p>
@@ -270,31 +261,19 @@
     <section class="tight">
       <div class="section-label">Why Knack</div>
       <h2>Native. Private. Offline.</h2>
-      <div class="grid">
+      <div class="grid why-grid">
         <div class="card">
-          <div class="tile c-amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M13 2L4 14h7l-1 8 9-12h-7z"/>
-            </svg>
-          </div>
+          <div class="tile c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
           <h3>100% native SwiftUI</h3>
           <p>No Electron. No web views. Starts instantly, feels native.</p>
         </div>
         <div class="card">
-          <div class="tile c-green">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.4" fill="currentColor"/>
-            </svg>
-          </div>
+          <div class="tile c-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.4" fill="currentColor"/></svg></div>
           <h3>Works offline</h3>
           <p>Every tool runs on your Mac. Your files never leave the device.</p>
         </div>
         <div class="card">
-          <div class="tile c-pink">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20.8 11.5a8.5 8.5 0 1 1-9.3-9.3"/><path d="M22 4l-9 9-3-3"/>
-            </svg>
-          </div>
+          <div class="tile c-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 11.5a8.5 8.5 0 1 1-9.3-9.3"/><path d="M22 4l-9 9-3-3"/></svg></div>
           <h3>No subscription</h3>
           <p>Free stays free. Pro is one-time $4.99, yours forever.</p>
         </div>

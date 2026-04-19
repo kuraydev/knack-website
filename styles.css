@@ -63,7 +63,7 @@ html, body {
 /* ─── layout ─── */
 
 .container {
-  max-width: 1040px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 28px;
 }
@@ -107,7 +107,7 @@ nav.top a:hover { color: var(--text-primary); }
 
 .hero {
   text-align: center;
-  padding: 80px 0 64px;
+  padding: 72px 0 40px;
 }
 
 .hero .app-icon {
@@ -500,87 +500,259 @@ footer a {
 }
 footer a:hover { color: var(--text-primary); }
 
-/* ─── screenshots ─── */
-
-/*
- * Source PNGs are 1779×1162 (roughly @2x for our layout). We render them
- * responsively and let the browser's default high-quality downscale do
- * the work — explicitly avoiding image-rendering overrides, which make
- * photographic content look crunchy on retina.
+/* ─── screenshots: macOS window chrome ───
+ *
+ * Source PNGs are 1779×1162. We let the browser do default high-quality
+ * downscale — no image-rendering overrides (that crunches photos on retina).
  */
-.shot {
+.window {
   margin: 0;
   border-radius: 16px;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(199, 92, 235, 0.08), transparent 60%),
-    var(--card-fill-strong);
-  border: 1px solid var(--card-stroke);
+  background: #0B0E1F;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.45),
-    0 2px 6px rgba(0, 0, 0, 0.3),
+    0 32px 80px rgba(0, 0, 0, 0.55),
+    0 4px 12px rgba(0, 0, 0, 0.35),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   position: relative;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
               box-shadow 0.4s ease;
+  isolation: isolate;
 }
 
-.shot img {
+.window img {
   display: block;
   width: 100%;
   height: auto;
-  /* Avoid any transform that would trigger low-quality rasterization. */
   image-rendering: auto;
 }
 
-.shot figcaption {
+/* Hero screenshot — the star of the page */
+.hero-shot-wrap {
+  position: relative;
+  padding: 0 0 56px;
+  margin-top: -4px;
+}
+
+.hero-shot-wrap::before {
+  content: "";
   position: absolute;
-  bottom: 12px;
-  left: 14px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  color: rgba(255, 255, 255, 0.92);
-  padding: 5px 10px;
-  border-radius: 8px;
-  background: rgba(14, 18, 36, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  inset: -20% 0 -5% 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 40%, rgba(199, 92, 235, 0.30), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 30% 70%, rgba(255, 82, 140, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 70% 70%, rgba(56, 158, 255, 0.18), transparent 60%);
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .shot-hero {
-  margin-bottom: 20px;
   box-shadow:
-    0 32px 80px rgba(0, 0, 0, 0.55),
-    0 4px 12px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 0 80px rgba(199, 92, 235, 0.18);
+    0 60px 140px rgba(0, 0, 0, 0.65),
+    0 10px 28px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 180px rgba(199, 92, 235, 0.26);
+  transform: perspective(2400px) rotateX(1deg);
+  border-radius: 20px;
 }
 
-.shot-hero:hover { transform: translateY(-3px); }
+.shot-hero:hover {
+  transform: perspective(2400px) rotateX(0deg) translateY(-3px);
+}
 
-.shot-grid {
+.hero-stats {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 40px auto 0;
+  max-width: 760px;
+  padding: 18px 24px;
+  background: var(--card-fill);
+  border: 1px solid var(--card-stroke);
+  border-radius: var(--radius-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.shot-grid .shot:hover {
-  transform: translateY(-2px);
+.hero-stats .stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-stats .stat strong {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-stats .stat span {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+/* Showcase: alternating text / screenshot rows */
+.showcase-intro {
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.showcase-intro h2,
+.showcase-intro p.lede {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.showcase {
+  padding: 8px 0 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.showcase-row {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.showcase-row.reverse {
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+}
+
+.showcase-row.reverse .showcase-copy { order: 2; }
+.showcase-row.reverse .window        { order: 1; }
+
+.showcase-copy h3 {
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 14px 0 14px;
+}
+
+.showcase-copy p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.showcase-row .window {
   box-shadow:
-    0 28px 68px rgba(0, 0, 0, 0.5),
-    0 2px 6px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(199, 92, 235, 0.25);
+    0 36px 80px rgba(0, 0, 0, 0.5),
+    0 6px 18px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 80px var(--showcase-glow, rgba(199, 92, 235, 0.18));
 }
 
-@media (max-width: 720px) {
-  .shot-grid { grid-template-columns: 1fr; }
+.showcase-row:nth-child(1) .window { --showcase-glow: rgba(34, 211, 238, 0.22); }
+.showcase-row:nth-child(2) .window { --showcase-glow: rgba(199, 92, 235, 0.26); }
+.showcase-row:nth-child(3) .window { --showcase-glow: rgba(249, 115, 22, 0.22); }
+.showcase-row:nth-child(4) .window { --showcase-glow: rgba(20, 184, 166, 0.22); }
+
+/* Chips (small tool label above showcase heading) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.chip svg {
+  width: 14px;
+  height: 14px;
+}
+
+.chip .pro-pill {
+  margin-left: 4px;
+  font-size: 9px;
+  padding: 2px 6px;
+}
+
+.chip.chip-cyan   { background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(59, 130, 246, 0.14)); border-color: rgba(59, 130, 246, 0.30); }
+.chip.chip-amber  { background: linear-gradient(135deg, rgba(251, 191, 36, 0.18), rgba(249, 115, 22, 0.14)); border-color: rgba(249, 115, 22, 0.30); }
+.chip.chip-teal   { background: linear-gradient(135deg, rgba(45, 212, 191, 0.18), rgba(14, 165, 233, 0.14)); border-color: rgba(14, 165, 233, 0.30); }
+.chip.chip-brand  { background: var(--brand-soft); border-color: rgba(199, 92, 235, 0.30); }
+
+/* Pills (compact feature tags under copy) */
+.pills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pills li {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+/* Pro badge corner treatment on the compact tools grid */
+.card.pro {
+  background:
+    linear-gradient(180deg, rgba(199, 92, 235, 0.08), transparent 60%),
+    var(--card-fill-strong);
+}
+
+.why-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pricing-footnote {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  margin: 24px auto 0;
+  max-width: 560px;
+}
+
+@media (max-width: 860px) {
+  .showcase-row,
+  .showcase-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .showcase-row.reverse .showcase-copy { order: 1; }
+  .showcase-row.reverse .window        { order: 2; }
+  .showcase { gap: 56px; }
+  .why-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shot, .shot-hero, .shot-grid .shot { transition: none; }
-  .shot-hero:hover, .shot-grid .shot:hover { transform: none; }
+  .window { transition: none; }
+  .shot-hero { transform: none; }
+  .shot-hero:hover { transform: none; }
 }
 
 /* ─── prose (privacy page) ─── */
