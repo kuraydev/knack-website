@@ -726,7 +726,11 @@ footer a:hover { color: var(--text-primary); }
 }
 
 .why-grid {
-  grid-template-columns: repeat(3, 1fr);
+  /* Four tiles on desktop; auto-fit lets it fall to 2 on mid-sized
+     windows and the 1-column rule in the mobile media query below
+     handles the narrowest viewport. 220px min keeps each card wide
+     enough for its heading + one-line description. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .pricing-footnote {
